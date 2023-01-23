@@ -1,0 +1,70 @@
+
+  @media only screen and (max-width: 1300px)
+  {
+    .cric-ball-img{
+        display: none;
+    }
+    .cric-bat-img{
+        display: none;
+    }
+    .cric-bat2-img{
+        display: none;
+    }
+    .bat-ball-area{
+        /* justify-content: flex-start; */
+        display: block;
+        padding-left:250px;
+        text-align: left;
+        /* justify-items: left; */
+    }
+  }
+
+  @media only screen and (max-width: 775px)
+  {
+    .bat-ball-area{
+        /* justify-content: flex-start; */
+        /* display: block; */
+        padding-left:200px;
+        text-align: left;
+        margin: 0;
+        /* justify-items: left; */
+    }
+    .heading{
+        margin-left: 0;
+    }
+  }
+
+  @media only screen and (max-width:1160px)
+  {
+    .bat-ball-area{
+        /* justify-content: flex-start; */
+        padding-left: 200px;
+        /* justify-items: left; */
+    }
+  }
+
+  
+  @media only screen and (max-width:1044px)
+  {
+    .bat-ball-area{
+        /* justify-content: flex-start; */
+        padding-left: 120px;
+        /* justify-items: left; */
+    }
+  }
+
+  @media only screen and (max-width:900px)
+  {
+    .bat-ball-area{
+        /* justify-content: flex-start; */
+        padding-left: 60px
+        /* justify-items: left; */
+    }
+  }
+
+  @media only screen and (max-width:587px)
+  {
+    .BLOG-CONTENT{
+      height:fit-content
+    }
+  }

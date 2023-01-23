@@ -1,0 +1,117 @@
+.BLOG-CONTENT{
+    padding: 20px;
+    border-radius: 20px;
+    /* box-sizing: border-box; */
+    background-color: rgb(135, 206, 235,0.6);
+    text-align: center;
+    width: 300px;
+    height: fit-content;
+    display: none;
+
+    /* display: flex; */
+    /* right: 0; */
+    /* row-gap: 10px; */
+    /* filter: blur(8px); */
+}
+
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  /* from {opacity: .4}
+  to {opacity: 1} */
+
+  0%{
+    /* display: none; */
+    opacity: .4
+  }
+
+  33%{
+    transform: translateX(-5%);
+  }
+
+  66%{
+    transform: translateX(5%);
+  }
+  100%{
+    opacity: 1;
+    /* display: block; */
+  }
+}
+
+.BLOG-CONTAINER{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* height: 200px; */
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction:row;
+    justify-content:space-around;
+    /* justify-items: center; */
+    /* flex-wrap: nowrap; */
+    padding-top:50px;
+    /* padding-left:22.5%; */
+}
+
+.post-heading{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+
+.post-body{
+    height:max-content;
+    text-align: justify;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+.post-created-at {
+    text-align: end;
+    bottom: 0;
+
+}
+
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    font-weight: bolder;
+    font-size: 80px;
+    transition: 0.6s ease;
+    /* width: 100px; */
+    /* border-radius: 0 3px 3px 0; */
+    border-radius: 50%;
+    user-select: none;
+    text-align: center;
+    margin: none;
+    color: black;
+  }
+  .prev{
+    right:0;
+    top: 70px;
+    top:130px;
+    height:100px;
+    width:100px;
+
+  }
+
+  .next{
+    top:130px; 
+    height:100px;
+    width:100px;
+  }
+
+  .prev:hover,.next:hover{
+    background-color: rgb(135, 206, 235,0.6);
+  }
+
+  .scroll-holder{
+    position: relative;
+    width: 200px;
+  }

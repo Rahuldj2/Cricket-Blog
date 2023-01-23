@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!-- 1. WORK TO MAKE EXTREMELY RESPONSIVE
+  2. SIGN IN PAGE
+  3. SIGN UP PAGE
+-->
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BLOG HOME</title>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'home.css'%}" />
+    <link rel="stylesheet" href="{% static 'general.css'%}" />
+    <link rel="stylesheet" href="{% static 'sidebar.css'%}" />
+    <link rel="stylesheet" href="{% static 'blogPosts.css'%}" />
+    <link rel="stylesheet" href="{% static 'media.css'%}" />
+  </head>
+
+  <body>
+    <div class="mst-container fadeIn">
+      <!-- <div class="bg-image"></div> -->
+    </div>
+
+    <main class="main-content">
+      <nav class="top-nav">
+        <div class="sidebar-div">
+          {%load static%}
+          <img
+            class="sidebar-icon"
+            src="{%static 'sidebar-icon.png'%}"
+            alt=""
+          />
+        </div>
+
+        <ul>
+          <li><a href="{% url 'home' %}">HOME</a></li>
+
+          <li>SIGN UP</li>
+
+          <li>SIGN IN</li>
+        </ul>
+      </nav>
+
+      <div class="bat-ball-area">
+        {%load static%}
+        <div class="bat1-box">
+          <img
+            class="cric-bat-img"
+            src="{% static 'bat-removebg-preview.png'%}"
+            alt="image-of-bat"
+          />
+        </div>
+
+        <div class="ball-box">
+          <img
+            class="cric-ball-img"
+            src="{% static 'cric-ball-2.jpg'%}"
+            alt="image-of-ball"
+          />
+        </div>
+        <div class="header-div">
+          <h1 class="heading">CRICKET BLOG</h1>
+        </div>
+
+        <div class="bat2-box">
+          <img
+            class="cric-bat2-img"
+            src="{% static 'bat-flip.png'%}"
+            alt="image-of-bat"
+          />
+        </div>
+      </div>
+
+      <div class="BLOG-CONTAINER">
+        <div class="scroll-holder">
+          <a class="prev" onclick="plusSlides(-1)">&lt;</a>
+        </div>
+
+        {% for post in posts reversed%}
+        <div class="BLOG-CONTENT fade">
+          <div class="post-heading">{{post.title}}</div>
+
+          <div class="post-body">{{post.body}}</div>
+
+          <div class="post-created-at">{{post.created_at}}</div>
+        </div>
+        {% endfor %}
+        <div class="scroll-holder">
+          <a class="next" onclick="plusSlides(+1)">&gt;</a>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("BLOG-CONTENT");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+        slides[slideIndex - 1].style.margin = "0";
+      }
+
+      // $(".bat1-box").bind(
+      //   "webkitAnimationEnd mozAnimationEnd animationend",
+      //   function () {
+      //     $(this).removeClass("animated");
+      //   }
+      // );
+
+      // $(".bat1-box").hover(function () {
+      //   $(this).addClass("animated");
+      // });
+
+      // $(".bat2-box").bind(
+      //   "webkitAnimationEnd mozAnimationEnd animationend",
+      //   function () {
+      //     $(this).removeClass("animate");
+      //   }
+      // );
+
+      // $(".bat2-box").hover(function () {
+      //   $(this).addClass("animate");
+      // });
+
+      // $(".ball-box").bind(
+      //   "webkitAnimationEnd mozAnimationEnd animationend",
+      //   function () {
+      //     $(this).removeClass("anime");
+      //   }
+      // );
+
+      // $(".ball-box").hover(function () {
+      //   $(this).addClass("anime");
+      // });
+    </script>
+  </body>
+</html>
+
+<!-- <div class="row">
+  <div class="leftcolumn">
+    {% for post in posts reversed %}
+    <div class="card">
+      <a
+        href="/post/{{post.id}}"
+        style="text-decoration: none; color: black"
+      >
+        <h2>{{post.title}}</h2>
+        <h5>{{post.created_at}}</h5>
+        <p>{{post.body|truncatewords:2}}</p>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div> -->
